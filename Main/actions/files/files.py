@@ -12,7 +12,7 @@ class filesH():
         self.file=None
     def create_file(self):
         try: 
-            file_route=self.route+"/"+self.name+"."+self.ext
+            file_route=self.route+self.name+"."+self.ext
             file = open(file_route, "w")
             self.file=file
             return True

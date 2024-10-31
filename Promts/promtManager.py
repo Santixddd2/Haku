@@ -9,9 +9,7 @@ promts_list={}
 promts_rote=os.environ.get("PROMTS_ROUTE")
 
 def charge_promts():
-    print("Ruta: ",promts_rote)
     for file_name in os.listdir(promts_rote):
-        print("Archivo: ",file_name)
         route = os.path.join(promts_rote, file_name)
         if os.path.isfile(route):
             with open(route, "r") as archivo:
