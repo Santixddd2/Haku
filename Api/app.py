@@ -19,6 +19,9 @@ def index():
 
 @app.route('/listen',methods=['POST'])
 def listen():
+    while global_haku.state=="busy":
+        print("Haku is busy")
+        pass
     audio=request.files['audio']
     audio_bytes=audio.read()
     audio_filename = 'temp.ogg'  
@@ -27,8 +30,9 @@ def listen():
     audio_segment = audio_segment.set_channels(1)
     audio_segment.export(audio_path, format='ogg')
     answer=global_haku.transcript(audio_path)
-    os.remove(audio_path)
-    return jsonify({'response': answer})
+    print("Model: ",answer)
+    return jsonify({'response': answer,'audio_path':audio_path})
+    
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',port=5000,debug=True)

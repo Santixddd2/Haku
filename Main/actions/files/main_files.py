@@ -41,10 +41,10 @@ def main_files(role,cont):
             obj=filesH(name,route,ext)
             if choosed_function=="create_file":
                 if  obj.create_file() and obj.write_file(con):
+                    print("Route: ",route)
                     return message
         except Exception as e:
-            error="Something went wrong: ",e
-            return error
+            pass
      
 
 

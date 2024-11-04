@@ -50,7 +50,7 @@ Sesion de ejemplo 3:
 
 Peticion: Haku, ¿estas ahi?.
 Pensamiento: Esta no es una peticion, sin embargo se encuentra en las acciones disponibles 
-y se refiere a la tarea Answer. Es decir, debo retornar lo que el usuario me proporciono, en este choose_action
+y se refiere a la tarea Answer. Es decir, debo retornar lo que el usuario me proporciono, en este caso
 "Haku¿Estas ahi?"
 Action: 
 

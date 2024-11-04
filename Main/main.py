@@ -39,7 +39,7 @@ class Haku():
                     "content": promt,
                 }
             ],
-            model="llama3-8b-8192",
+            model="llama-3.1-70b-versatile",
             )
             response=chat_completion.choices[0].message.content
             json_function = extract_json(response)
@@ -49,29 +49,36 @@ class Haku():
                 choosed_action = json_function[0]['choosed_action']
                 promt_agent = json_function[0]['promt_agent']
                 if is_action=="True":
+                    
                     if choosed_action=="Files":
-                        message=main_files(self.promts_list["AdministrarArchivos.txt"],promt_agent)   
-                        self.state="free"    
-                        return message 
+                        try: 
+                           message=main_files(self.promts_list["AdministrarArchivos.txt"],promt_agent)   
+                           return message 
+                        except:
+                            pass
                     if choosed_action=="Answer":
-                        response=answer_model(promt_agent,self.promts_list["Contestar.txt"])
-                        self.state="free"    
-                        return response
+                        try: 
+                            response=answer_model(promt_agent,self.promts_list["Contestar.txt"])
+                            return response
+                        except:
+                            pass    
             else:
                 pass
             
     def transcript(self,audio):
-        if self.state=="busy":
-            print("On queque")
-        else:
+        try:            
             petition=self.trans_model.transcribe(audio)
             petition=petition['text']
-            print("p",petition)
+            print("Audio_path: ",audio)
+            print("Petition: ",petition)
             if len(petition)<=1:
                 return "Peticion vacia, señor"
             else: 
-               answer=self.main_funcion(petition)
-               return answer
+                answer=self.main_funcion(petition)
+                return answer
+        except:
+            return "Hubo un problema con la peticion, señor"
+
             
 
 

@@ -5,6 +5,7 @@ var text=null;
 const recognition= new webkitSpeechRecognition();
 recognition.lang='es-ES';
 recognition.continuous=true;
+var send=false;
 //let audio_response=null;
 
 function start_recognition(){
@@ -54,20 +55,29 @@ function setupStream(stream){
         chunks.push(e.data);
     }
     recorder.onstop = e =>{
+        console.log("stop")
         const blob = new Blob(chunks,{type: "audio/ogg; codecs=opus"});
         chunks = [];
         if (text.includes('haku') || text.includes('jaku') || text.includes('jacu') || 
-        text.includes('Jacob') || text.includes('Jack')){
-            send_order(blob)
-            console.log("sent")
-            recognition.start();
+        text.includes('Jacob') || text.includes('Jack') || text.includes('Haku') || text.includes('Jacu')|| text.includes('Jaku')){
+            console.log("detected")
+            console.log(send)
+            if (send==false){
+                console.log("pass")
+                send_order(blob);
+                send=true;
+                console.log("sent");
+            }
+            else{
+                console.log("no pass")
+            }
     }
     }
 
 }
 
 function send_order(blob){
-    console.log("sending...")
+    console.log("Sending...");
     const formData = new FormData();
     formData.append('audio', blob, 'recording.ogg');
     $.ajax({
@@ -90,11 +100,14 @@ function send_order(blob){
 function speech_answer(audio_response){
     let speech=new SpeechSynthesisUtterance();
     let voices=window.speechSynthesis.getVoices();
-    speech.voice=voices[1]
+    speech.voice=voices[2]
     speech.text=audio_response;
     console.log("model: ",audio_response)
     window.speechSynthesis.speak(speech);
+    send=false;
 }
+
+
 
 
 SetupAudio();
