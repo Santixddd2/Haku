@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Haku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/listen.js') }}"></script>
+  </head>
+  <body>
+   <center> <h1>Haku</h1></center>
+    <div class="container">
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='img/padoru_lokito.jpg') }}" alt="Lokito Image">
+      </div>
+      <div class="chat-container">
+        <div class="chat-messages">
+          <div class="chat-messages" id="text"></div>
+        </div>
+        <form>
+          <div class="chat-input">
+            <input type="text" placeholder="write a message">
+            <button>Send</button>
+          </div>
+  
+        </form>      
+      </div>
+    </div>
+  
+
+
+  </body>
+</html>

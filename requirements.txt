@@ -1,2 +1,13 @@
 groq
 flask
+whisperai
+ffmpeg
+torch vision
+torch audio
+
+Vairables de entorno: 
+
+PYTHONPATH
+GROQ_API_KEY
+PROMTS_ROUTE
+TEMP_AUDIOS
