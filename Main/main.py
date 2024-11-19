@@ -6,17 +6,17 @@ execute, chose the promt and the respective funcion to the promt.
 
 import os
 from groq import Groq
-from Promts.promtManager import charge_promts
+from Promts.promtManager import charge_promts,charge_functions
 from Main.json_helpers import extract_json
-from Main.actions.files.main_files import main_files
-from Main.actions.answer.answer import answer_model
+from Conf.conf import groq_api_key
 import whisper
 
 class Haku():
     def __init__(self,main_promt):
-        self.api_key=os.environ.get("GROQ_API_KEY")
+        self.api_key=groq_api_key
         self.promts_list=charge_promts()
         self.main=self.promts_list[main_promt]
+        self.functions=charge_functions()
         self.trans_model=whisper.load_model("small")
         self.state="free"
         
@@ -31,7 +31,7 @@ class Haku():
             chat_completion = client.chat.completions.create(
             messages=[
                 {
-                    "role": "system",
+                    "role": "assistant",
                     "content": self.main
                 },
                 {
@@ -49,24 +49,18 @@ class Haku():
                 choosed_action = json_function[0]['choosed_action']
                 promt_agent = json_function[0]['promt_agent']
                 if is_action=="True":
-                    
-                    if choosed_action=="Files":
-                        try: 
-                           message=main_files(self.promts_list["AdministrarArchivos.txt"],promt_agent)   
-                           return message 
-                        except:
-                            pass
-                    if choosed_action=="Answer":
-                        try: 
-                            response=answer_model(promt_agent,self.promts_list["Contestar.txt"])
-                            return response
-                        except:
-                            pass    
+                    try:
+                        key=choosed_action
+                        role=self.promts_list[key+".txt"]
+                        message=self.functions[key].main(promt_agent,role)
+                        return message
+                    except:
+                        pass  
             else:
                 pass
             
     def transcript(self,audio):
-        try:            
+        #try:            
             petition=self.trans_model.transcribe(audio)
             petition=petition['text']
             print("Audio_path: ",audio)
@@ -76,8 +70,11 @@ class Haku():
             else: 
                 answer=self.main_funcion(petition)
                 return answer
-        except:
-            return "Hubo un problema con la peticion, señor"
+        #except:
+            #return "Hubo un problema con la peticion, señor"
+
+    def queue(self,petition):
+        return 0
 
             
 

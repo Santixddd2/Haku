@@ -1,9 +1,9 @@
 from groq import Groq
-import os
+from Conf.conf import groq_api_key
 
-def answer_model(cont,role):
+def main(cont,role):
         client = Groq(
-        api_key=os.environ.get("GROQ_API_KEY"),
+        api_key=groq_api_key,
         )
         chat_completion = client.chat.completions.create(
         messages=[
@@ -20,3 +20,4 @@ def answer_model(cont,role):
         )
         response=chat_completion.choices[0].message.content
         return response
+

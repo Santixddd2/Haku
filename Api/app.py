@@ -9,7 +9,7 @@ from pydub import AudioSegment
 app=Flask(__name__)
 
 temp_audios = os.getenv("TEMP_AUDIOS")
-global_haku=Haku("mainPromt.txt")
+global_haku=Haku("Main.txt")
     
 @app.route('/')
 

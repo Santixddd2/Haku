@@ -4,18 +4,31 @@ correspond to a unique function
 '''
 
 import os
+from Main.actions import *
+from Conf.conf import func_route,promts_route,functions
+import sys
+import importlib.util
 
 promts_list={}
-promts_rote=os.environ.get("PROMTS_ROUTE")
+functions_list={}
 
 def charge_promts():
-    for file_name in os.listdir(promts_rote):
-        route = os.path.join(promts_rote, file_name)
+    for file_name in os.listdir(promts_route):
+        route = os.path.join(promts_route, file_name)
         if os.path.isfile(route):
             with open(route, "r") as archivo:
                content = archivo.read()
                promts_list[file_name]=content
     return promts_list
+
+def charge_functions():
+    for key, value in functions.items():
+        spec = importlib.util.spec_from_file_location(key, func_route+"/"+value)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        functions_list[key]=module
+    return functions_list
+
 
 def add_promts():
     return 0

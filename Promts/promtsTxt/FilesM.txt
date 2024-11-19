@@ -32,23 +32,4 @@ Action:
 Al escribir content no puedes usar dentro de las comillas dobles los caracteres de barra invertida,
 comillas dobles, o algun caracter especial del fromato json.
 
-PAUSA
-
-Luego seras llamado nuevamente y responderas de la siguiente forma:
-
-Estado: Terminado.
-
-Entonces responderas algo como:
-
-Answer: La tarea fue completada con exito señor.
-
-en cambio si
-
-Estado: Fallo
-
-Entonces responderas como:
-
-Answer: Algo salio mal señor.
-
-
 '''

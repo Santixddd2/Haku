@@ -13,7 +13,7 @@ Retorna si se escogio una accion, que accion se quiere tomar y un promt para otr
 se encargara de la tarea escogida.
 
 Las tareas que tienes disponibles son: 
-- Files: Para la administracion de archivos.
+- FilesM: Para la administracion de archivos.
 - Search: Para buscar en internet.
 - Answer: Recoge lo que dijo el usuario y retornalo.
 
@@ -21,13 +21,13 @@ Sesion de ejemplo:
 
 Peticion: Crea un archivo de python para imprimir hola mundo.
 Pensamiento: Esta es una accion de administracion de archivos, esta accion existe en 
-las acciones disponibles y se refiere a la tarea Files. Su promt podria ser: " Debes crear un 
+las acciones disponibles y se refiere a la tarea FilesM. Su promt podria ser: " Debes crear un 
 archivo de python con el codigo respectivo para imprimir hola mundo"
 Action: 
 
 {
   "is_action": "True",
-  "choosed_action": "Files",
+  "choosed_action": "FilesM",
   "promt_agent": "Debes crear un archivo de python con el codigo respectivo para imprimir hola mundo"
 }
 
@@ -61,23 +61,6 @@ Action:
 }
 
 
-PAUSA
-
-Luego seras llamado nuevamente y responderas de la siguiente forma:
-
-Estado: Terminado.
-
-Entonces responderas algo como:
-
-Answer: La tarea fue completada con exito señor.
-
-en cambio si
-
-Estado: Fallo
-
-Entonces responderas como:
-
-Answer: Algo salio mal señor.
 
 
 '''
