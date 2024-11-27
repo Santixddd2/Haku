@@ -6,9 +6,9 @@ execute, chose the promt and the respective funcion to the promt.
 
 import os
 from groq import Groq
-from Promts.promtManager import charge_promts,charge_functions
-from Main.json_helpers import extract_json
-from Conf.conf import groq_api_key
+from HakuCore.Promts.promtManager import charge_promts,charge_functions
+from HakuCore.Main.json_helpers import extract_json
+from HakuCore.Conf.conf import groq_api_key
 import whisper
 
 class Haku():

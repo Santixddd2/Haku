@@ -5,9 +5,9 @@ execute, chose the promt and the respective funcion to the promt.
 '''
 import os
 from groq import Groq
-from Main.json_helpers import extract_json
-from Main.actions.files.files import filesH
-from Conf.conf import groq_api_key
+from HakuCore.Main.json_helpers import extract_json
+from HakuCore.Main.actions.files.files import filesH
+from HakuCore.Conf.conf import groq_api_key
 
 def main(cont,role):
         iter=0

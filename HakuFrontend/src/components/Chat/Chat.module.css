@@ -1,0 +1,32 @@
+.messagesContainer {
+  height: 400px;
+  max-width: 600px;
+  overflow-y: auto;
+  border: 1px solid #333;  /* Usa un borde más visible */
+  border-radius: 8px;
+  padding: 1rem;  /* Esto es equivalente a 'p-3' en Bootstrap */
+  width: 75%;  /* Esto es equivalente a 'w-75' en Bootstrap */
+  background-color: #f9f9f9;  /* Agrega un color de fondo para que se vea claramente */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Agrega una sombra sutil para mayor visibilidad */
+}
+.textRight {
+  text-align: right;
+  background-color: #d0d0d0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  width: auto; /* Ajusta el ancho al contenido */
+  max-width: 50%; /* Limita el ancho máximo */
+  margin-left: auto; /* Centra el mensaje en la pantalla */
+  margin-right: 0; /* Asegura que el mensaje esté a la derecha */
+
+}
+.textDivLeft {
+  background-color: #f0f0f0;  /* Color de fondo para los mensajes "pares" */
+    border-radius: 8px;
+  margin-bottom: 8px;
+}
+.textLeft {
+  text-align: left;
+
+}

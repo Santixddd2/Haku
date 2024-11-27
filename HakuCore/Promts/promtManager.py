@@ -4,8 +4,8 @@ correspond to a unique function
 '''
 
 import os
-from Main.actions import *
-from Conf.conf import func_route,promts_route,functions
+from HakuCore.Main.actions import *
+from HakuCore.Conf.conf import func_route,promts_route,functions
 import sys
 import importlib.util
 

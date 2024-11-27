@@ -1,5 +1,5 @@
 from groq import Groq
-from Conf.conf import groq_api_key
+from HakuCore.Conf.conf import groq_api_key
 
 def main(cont,role):
         client = Groq(
