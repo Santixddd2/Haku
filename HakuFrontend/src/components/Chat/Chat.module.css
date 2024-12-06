@@ -24,7 +24,7 @@
 .textDivLeft {
   background-color: #f0f0f0;  /* Color de fondo para los mensajes "pares" */
     border-radius: 8px;
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 .textLeft {
   text-align: left;

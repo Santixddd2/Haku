@@ -18,3 +18,5 @@ functions={"FilesM":"main_files.py","Answer":"answer.py"}
 
 #Model options
 
+model_name='llama-3.1-70b-versatile'
+
