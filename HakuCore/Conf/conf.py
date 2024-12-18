@@ -7,8 +7,8 @@ import os
 
 
 #Routes
-func_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Main/actions/mainPet'
-promts_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Promts/promtsTxt'
+func_route='Functions absolute route (mainPet)'
+promts_route='Promts absolute route (promtsTxt)'
 
 #Api keys
 groq_api_key=os.environ.get("GROQ_API_KEY")
