@@ -7,9 +7,10 @@ import os
 
 
 #Routes
-func_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Main/actions'
-files_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Main/actions'
-temp_route='C:/users/santiago/Documents/Haku/Haku/HakuServer/temp'
+
+func_route='Functions absolute route '
+files_route='Files absolute route to upload'
+temp_route='Temp route to audio files'
 
 #Api keys
 groq_api_key=os.environ.get("GROQ_API_KEY")
