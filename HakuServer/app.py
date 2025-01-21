@@ -13,8 +13,8 @@ app=Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
 temp_audios = os.getenv("TEMP_AUDIOS")
-global_haku=Haku("Main.txt")
-haku_memory=global_haku.instance_haku_memory()
+global_haku=Haku()
+haku_memory=global_haku.instance_haku_memoryTools()
     
 @app.route('/')
 
@@ -44,6 +44,7 @@ def read():
     order = petition.get('order')
     nPetition = petition.get('nPetition')
     answer,nPetition=global_haku.main_funcion(order,haku_memory,nPetition)
+    print(answer)
     return jsonify({'answer': answer,'nPetition': nPetition})
     
 if __name__ == '__main__':

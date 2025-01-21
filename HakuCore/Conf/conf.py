@@ -7,16 +7,18 @@ import os
 
 
 #Routes
-func_route='Functions absolute route (mainPet)'
-promts_route='Promts absolute route (promtsTxt)'
+
+func_route='Functions absolute route '
+files_route='Files absolute route to upload'
+temp_route='Temp route to audio files'
 
 #Api keys
 groq_api_key=os.environ.get("GROQ_API_KEY")
 
 #Functions
-functions={"FilesM":"main_files.py","Answer":"answer.py"}
+functions={"FilesM":"files.py"}
 
 #Model options
 
-model_name='llama-3.1-70b-versatile'
+model_name='llama3-70b-8192'
 
