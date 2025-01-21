@@ -7,16 +7,17 @@ import os
 
 
 #Routes
-func_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Main/actions/mainPet'
-promts_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Promts/promtsTxt'
+func_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Main/actions'
+files_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Main/actions'
+temp_route='C:/users/santiago/Documents/Haku/Haku/HakuServer/temp'
 
 #Api keys
 groq_api_key=os.environ.get("GROQ_API_KEY")
 
 #Functions
-functions={"FilesM":"main_files.py","Answer":"answer.py"}
+functions={"FilesM":"files.py"}
 
 #Model options
 
-model_name='llama-3.1-70b-versatile'
+model_name='llama3-70b-8192'
 
