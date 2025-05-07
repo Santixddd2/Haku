@@ -1,0 +1,27 @@
+{
+    "name": "base-wweb-postgres",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "prestart": "npx eslint . --no-ignore",
+        "pre-copy": "cd .. && npm run  copy.lib base-wweb-postgres",
+        "start": "node app.js"
+    },
+    "keywords": [],
+    "dependencies": {
+        "whatsapp-web.js": "1.23.0",
+        "@bot-whatsapp/bot": "latest",
+        "@bot-whatsapp/cli": "latest",
+        "@bot-whatsapp/database": "latest",
+        "@bot-whatsapp/provider": "latest",
+        "@bot-whatsapp/portal": "latest",
+        "pg": "^8.11.2"
+    },
+    "devDependencies": {
+        "eslint-plugin-bot-whatsapp": "latest",
+        "eslint": "^8.52.0"
+    },
+    "author": "",
+    "license": "ISC"
+}

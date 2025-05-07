@@ -1,0 +1,37 @@
+{
+  "name": "@bot-whatsapp/provider",
+  "version": "0.1.38",
+  "description": "Esto es el conector a Twilio, Meta, etc...",
+  "main": "./lib/mock/index.cjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "./lib/"
+  ],
+  "dependencies": {
+    "@bot-whatsapp/bot": "*",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "axios": "^1.4.0",
+    "combine-image": "^1.0.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "follow-redirects": "^1.15.2",
+    "qr-image": "^3.2.0",
+    "rimraf": "^3.0.2",
+    "sharp": "^0.30.5",
+    "queue-promise": "^2.2.1"
+  },
+  "exports": {
+    "./mock": "./lib/mock/index.cjs",
+    "./twilio": "./lib/twilio/index.cjs",
+    "./web-whatsapp": "./lib/web-whatsapp/index.cjs",
+    "./venom": "./lib/venom/index.cjs",
+    "./baileys": "./lib/baileys/index.cjs",
+    "./meta": "./lib/meta/index.cjs",
+    "./wppconnect": "./lib/wppconnect/index.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codigoencasa/bot-whatsapp/tree/main/packages/provider"
+  }
+}

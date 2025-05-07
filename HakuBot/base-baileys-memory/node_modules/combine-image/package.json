@@ -1,0 +1,46 @@
+{
+  "name": "combine-image",
+  "version": "1.0.3",
+  "description": "Combine multiple images into a single image",
+  "author": "Danish Kamal <danish5095@gmail.com>",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "prebuild": "npm run clean",
+    "build": "babel --out-dir lib src",
+    "clean": "rimraf lib"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/danish1994/combine-image",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "concat",
+    "convert",
+    "compose",
+    "image",
+    "manipulation",
+    "merge",
+    "combine",
+    "same size"
+  ],
+  "dependencies": {
+    "is-plain-obj": "^1.1.0",
+    "jimp": "0.2.27"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^20.0.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-1": "^6.24.1",
+    "eslint": "^4.5.0",
+    "eslint-config-prev": "^6.0.0",
+    "jest": "^20.0.4",
+    "rimraf": "^2.6.1"
+  }
+}

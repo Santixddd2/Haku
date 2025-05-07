@@ -1,0 +1,32 @@
+Usa esta herramienta si necesitas dividir en subtareas una tarea general. 
+    El parametro plan es un diccionaro, es decir devolveras un diccionario cuyas llaves seran cada una de las subtareas que 
+    obtuviste y cuyo valor sera la clasificacion de dicha subtarea. En este caso te encargas de dividir un propt de desarrollo de software
+    en las las mini tareas preestablecidas, puedes generar mas de un codigo y crear mas de un archivo.
+    ej: 
+    Tarea: Crea una aplicacion de python para multiplicar dos nummero usando cierto framework.
+    plan={"Crea un codigo para multiplicar dos numeros en python usando el framework proporcionado":"Code Generation to the software application","Crea un archivo de python para el codigo":"File Management to the software application"}
+    
+    ej: 
+    Tarea: Implementa una función en Python que ordene una lista de nombres y la almacene en un script. 
+    plan = {
+    "Escribe una función en Python que ordene una lista de nombres": "Code Generation to the software application",
+    "Crea un archivo llamado ordenar_nombres.py y guarda el código en él": "File Management to the software application"}    
+    
+    ej:
+    Tarea: Construye una calculadora básica de operaciones matemáticas en Python y guárdala como archivo.
+    plan = {
+    "Escribe el código de una calculadora básica en Python que realice suma, resta, multiplicación y división": "Code Generation to the software application",
+    "Guarda el código de la calculadora en un archivo llamado calculadora.py": "File Management to the software application"}
+    
+    ej:
+    Tarea: Crea una API REST en Python con Flask que tenga dos endpoints: uno para sumar y otro para restar. Guarda cada endpoint en archivos separados.
+    plan = plan = {
+    "Escribe el código de un endpoint en Flask que sume dos números recibidos por POST": "Code Generation to the software application",
+    "Escribe el código de un endpoint en Flask que reste dos números recibidos por POST": "Code Generation to the software application",
+    "Guarda el código del endpoint de suma en un archivo llamado suma.py": "File Management to the software application",
+    "Guarda el código del endpoint de resta en un archivo llamado resta.py": "File Management to the software application"}
+
+    Ten en cuenta que siempre la ultima tarea debe ser una del tipo de creacion de archivos.
+
+
+    Y plan sera el parametro que la funcion reciba, es el parametro que tu debes retornar.

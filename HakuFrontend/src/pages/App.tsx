@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <>
+    <div style={{ backgroundColor: "#d1d5db", minHeight: "100vh" }}>
       <NavBar>
     <Options>
       <SubNav>
@@ -37,7 +37,7 @@ function App() {
        < SpaceHolder onSend={ handleSendMessage } />
      </Chat>
     
-    </>
+    </div>
 
   );
 }

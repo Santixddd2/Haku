@@ -13,7 +13,7 @@ function Chat(props: PropsChat){
     Haku
   </div>
   <div className="image-container p-2 mt-3">
-    <img src="/images/HakuFace2.jpg" alt="Logo" className="img-fluid" style={{ maxWidth: '200px' }} />
+    <img src="/images/HakuFace.png" alt="Logo" className="img-fluid" style={{ maxWidth: '200px' }} />
   </div>
   { children }
 </div>

@@ -4,7 +4,8 @@ from flask_cors import CORS
 import os
 import io
 #from HakuCore.Main.main import Haku
-from HakuCore.Main.main import Haku
+from HakuCore.Main.agents.structuredTasks import *
+from HakuCore.Main.agents.hakuClass import *
 from pydub import AudioSegment
 
 
@@ -16,6 +17,7 @@ temp_audios = os.getenv("TEMP_AUDIOS")
 global_haku=Haku()
 haku_memory=global_haku.instance_haku_memoryTools()
     
+
 @app.route('/')
 
 def index():
@@ -37,15 +39,23 @@ def listen():
     answer=global_haku.transcript(audio_path)
     return jsonify({'response': answer,'audio_path':audio_path})
 
-
+'''
 @app.route('/read',methods=['POST'])
 def read():
     petition = request.json
     order = petition.get('order')
     nPetition = petition.get('nPetition')
     answer,nPetition=global_haku.main_funcion(order,haku_memory,nPetition)
-    print(answer)
     return jsonify({'answer': answer,'nPetition': nPetition})
-    
+'''
+@app.route('/read',methods=['POST'])
+def read():
+    petition = request.json
+    order = petition.get('order')
+    nPetition = petition.get('nPetition')
+    plan=agentManager(promt=order)
+    print(plan)
+    return jsonify({'answer': "look the console",'nPetition': nPetition})
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5000,debug=True)
