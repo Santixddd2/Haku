@@ -7,9 +7,9 @@ import os
 
 '''General options'''
 #Routes
-func_route_do='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Main/tools/normalTools'
-files_route='C:/Users/SANTIAGO/Documents/Haku/Haku/HakuCore/Main/tools/normalTools'
-temp_route='C:/users/santiago/Documents/Haku/Haku/HakuServer/temp'
+func_route_do=''
+files_route=''
+temp_route=''
 
 #Api keys
 groq_api_key=os.environ.get("GROQ_API_KEY")
@@ -46,7 +46,7 @@ Te refieres a mi como señor. Primero crea un orden de ejecucion para la tarea q
 
 #File options
 
-main_route='C:/UsersSANTIAGO'
+main_route=''
 
 
 
