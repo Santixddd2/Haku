@@ -1,0 +1,46 @@
+ ej:    prompt="Crea un archivo de python y escribe codigo en el "
+        variable="Aquí tienes un ejemplo de una aplicación Flask que recibe dos números por el método POST y devuelve su multiplicación:
+
+             ```python
+              # Importamos Flask
+              from flask import Flask, request, jsonify
+              # Creamos una instancia de Flask
+              app = Flask(__name__)
+
+               # Ruta que manejará las peticiones POST
+               @app.route('/multiplicar', methods=['POST'])
+               def multiplicar():
+            try:
+                # Obtenemos los números de la petición POST
+                num1 = float(request.form.get('num1'))
+                num2 = float(request.form.get('num2'))
+
+             # Realizamos la multiplicación
+             resultado = num1 * num2
+             except Exception as e:
+            # En caso de error, devolvemos un mensaje de error
+             return jsonify
+                'error': 'Ocurrió un error al procesar la petición'"
+            
+            respuesta="Porfavor crea un archivo de python y escribe el siguiente codigo en el:    # Importamos Flask
+              from flask import Flask, request, jsonify
+              # Creamos una instancia de Flask
+              app = Flask(__name__)
+
+               # Ruta que manejará las peticiones POST
+               @app.route('/multiplicar', methods=['POST'])
+               def multiplicar():
+            try:
+                # Obtenemos los números de la petición POST
+                num1 = float(request.form.get('num1'))
+                num2 = float(request.form.get('num2'))
+
+             # Realizamos la multiplicación
+             resultado = num1 * num2
+             except Exception as e:
+            # En caso de error, devolvemos un mensaje de error
+             return jsonify(
+                'error': 'Ocurrió un error al procesar la petición'
+                       "
+                       
+            Es decir, tomaste el codigo y lo combinaste con el prompt proporcionado.
